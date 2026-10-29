@@ -1,0 +1,12 @@
+<!DOCTYPE html><meta charset="utf-8"><title>send</title>
+<p id="s">보내는 중…</p>
+<script>
+// 앱스토어 커넥트 창(opener/parent)에 스크린샷 파일을 넘겨준다(업로드용, 임시)
+const files = (new URLSearchParams(location.search).get('f') || '').split(',').filter(Boolean);
+(async () => {
+  const out = [];
+  for (const f of files) { const r = await fetch(f); out.push({ name: f.split('/').pop(), type: 'image/png', buf: await r.arrayBuffer() }); }
+  (window.opener || window.parent).postMessage({ edito: out }, 'https://appstoreconnect.apple.com');
+  document.getElementById('s').textContent = '보냄 ' + out.length;
+})();
+</script>
