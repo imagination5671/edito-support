@@ -1,0 +1,177 @@
+/* One stylesheet for the three pages Edito needs to have a public address:
+   a landing page, a privacy policy and a support page.
+
+   Deliberately plain. These pages exist because App Store Connect requires a
+   reachable URL for each, and because an App Review reader — and any user who
+   taps through — should be able to read them on a phone, in either appearance,
+   with no fonts to download and no script to run. */
+
+:root {
+	color-scheme: light dark;
+	--ink: #14110d;
+	--ink-soft: #5d564c;
+	--ink-faint: #8d857a;
+	--paper: #f7f4ef;
+	--card: #fffdf9;
+	--rule: #e2dcd1;
+	--accent: #14110d;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--ink: #f0ece5;
+		--ink-soft: #b3aca1;
+		--ink-faint: #857d72;
+		--paper: #131211;
+		--card: #1c1a18;
+		--rule: #302c28;
+		--accent: #f0ece5;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0 1.25rem 5rem;
+	background: var(--paper);
+	color: var(--ink);
+	font: 400 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Apple SD Gothic Neo", "Noto Sans KR", Roboto, sans-serif;
+	-webkit-text-size-adjust: 100%;
+}
+
+main {
+	max-width: 42rem;
+	margin: 0 auto;
+}
+
+header.masthead {
+	padding: 3.5rem 0 2.25rem;
+	border-bottom: 1px solid var(--rule);
+	margin-bottom: 2.5rem;
+}
+
+header.masthead .wordmark {
+	display: inline-block;
+	font-size: 1.9rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	text-decoration: none;
+	color: var(--ink);
+}
+
+header.masthead p {
+	margin: 0.5rem 0 0;
+	color: var(--ink-soft);
+	font-size: 0.95rem;
+}
+
+h1 {
+	font-size: 1.55rem;
+	font-weight: 700;
+	letter-spacing: -0.015em;
+	margin: 0 0 0.35rem;
+}
+
+h2 {
+	font-size: 1.05rem;
+	font-weight: 700;
+	margin: 2.5rem 0 0.6rem;
+}
+
+h3 {
+	font-size: 0.98rem;
+	font-weight: 600;
+	margin: 1.6rem 0 0.4rem;
+}
+
+p,
+li {
+	color: var(--ink-soft);
+}
+
+p {
+	margin: 0 0 1rem;
+}
+
+ul {
+	margin: 0 0 1rem;
+	padding-left: 1.2rem;
+}
+
+li {
+	margin-bottom: 0.4rem;
+}
+
+strong {
+	color: var(--ink);
+	font-weight: 600;
+}
+
+a {
+	color: var(--accent);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}
+
+.dateline {
+	color: var(--ink-faint);
+	font-size: 0.88rem;
+	margin-bottom: 2rem;
+}
+
+.lede {
+	color: var(--ink);
+	font-size: 1.06rem;
+}
+
+/* The second language starts here. A rule rather than a tab: both versions are
+   equally authoritative, and a reader who wants the other one should be able to
+   scroll to it rather than discover a control. */
+.language-break {
+	margin: 4rem 0 2.5rem;
+	border: 0;
+	border-top: 1px solid var(--rule);
+}
+
+.cards {
+	display: grid;
+	gap: 0.9rem;
+	margin: 2rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cards a {
+	display: block;
+	padding: 1.1rem 1.25rem;
+	background: var(--card);
+	border: 1px solid var(--rule);
+	border-radius: 12px;
+	text-decoration: none;
+	color: var(--ink);
+	font-weight: 600;
+}
+
+.cards span {
+	display: block;
+	margin-top: 0.2rem;
+	color: var(--ink-soft);
+	font-weight: 400;
+	font-size: 0.92rem;
+}
+
+footer {
+	margin-top: 4rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--rule);
+	color: var(--ink-faint);
+	font-size: 0.86rem;
+}
+
+footer a {
+	color: var(--ink-faint);
+}
